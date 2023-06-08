@@ -26,21 +26,19 @@ export const TaskManager = () => {
   const getData = async () => {
     const response = await axios.get("/widgets");
     if (response.data.success) {
-    const data= response.data.data;
-    if(data){
-      setFirstcolumnWidgets(data.firstcolumn);
-      setSecondColumnWidgets(data.secondcolumn);
-    }
+      const data = response.data.data;
+      if (data) {
+        setFirstcolumnWidgets(data.firstcolumn);
+        setSecondColumnWidgets(data.secondcolumn);
+      }
     } else {
       return toast.error("Something went Wrong");
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     getData();
-  },[]);
-
-
+  }, []);
 
   const handlechange = (e, id, type) => {
     var result = [...secondColumnWidgets];
