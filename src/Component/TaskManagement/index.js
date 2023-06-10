@@ -99,7 +99,13 @@ export const TaskManager = () => {
       });
     }
   };
-
+  const handleReset = () => {
+    setFirstcolumnWidgets([
+      { id: 1, widget: "Button", text: "", "border-radius": "" },
+      { id: 2, widget: "Textbox", text: "" },
+    ]);
+    setSecondColumnWidgets([]);
+  };
   return (
     <>
       <div className="forManager mx-auto">
@@ -281,6 +287,18 @@ export const TaskManager = () => {
               }}
             >
               Save
+            </buton>
+            <buton
+              onClick={() => handleReset()}
+              type="button"
+              style={{
+                padding: "5px",
+                backgroundColor: "red",
+                marginTop: "200px",
+                color: "white",
+              }}
+            >
+              Reset
             </buton>
           </div>
         </div>
